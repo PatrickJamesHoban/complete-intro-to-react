@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  // explains which global variables to NOT fail you on...
+  "env": {
+    "es6": true, // symbol for example
+    "browser": true, // don't fail on 'window', 'document', etc.
+    "node": true // don't fail on process.env (only avail in node)
+  }
+}
