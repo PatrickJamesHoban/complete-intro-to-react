@@ -10,7 +10,7 @@ const MyTitle = function(props) {
   // use parenthesis after return to let JS know it needs to go to the next line.
   return (
     <div>
-      <h1 style={{ color: props.color }}> {props.title} </h1>
+      <h1 style={{ color: props.color }}>{props.title}</h1>
     </div>
   );
 };
@@ -37,4 +37,5 @@ const MyFirstComponent = function() {
 };
 
 // render(ce(MyFirstComponent), document.getElementById('app'));
-render(<MyFirstComponent/> document.getElementById('app'));
+
+render(<MyFirstComponent />, document.getElementById('app'));
