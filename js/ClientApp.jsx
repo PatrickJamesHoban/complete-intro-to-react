@@ -11,7 +11,7 @@ const App = () => (
   // can't use class in JSX as that is a reserved word for JavaScript.
   <div className="app">
     <div className="landing">
-      <h1>SVideo</h1>
+      <h1>svideo</h1>
       <input type="text" placeholder="Search" />
       <a>or Browse All</a>
     </div>

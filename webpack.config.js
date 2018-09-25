@@ -10,6 +10,10 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  // lets webpack know where you anticipate your bundle being served from...
+  devServer: {
+    publicPath: '/public/'
+  },
   resolve: {
     // order of resolution of extensions.
     extensions: ['.js', '.jsx', '.json']
@@ -25,6 +29,12 @@ module.exports = {
   // module is an array of rules that webpack will use to apply different loaders to the code.
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
       {
         // anything that ends in .js or .jsx run through babel
         test: /\.jsx?$/,
