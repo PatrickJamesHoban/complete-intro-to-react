@@ -1,18 +1,21 @@
-const ce = React.createElement;
+import React from 'react';
+import { render } from 'react-dom';
 
-const MyTitle = function(props) {
-  return ce('div', null, ce('h1', { style: { color: props.color } }, props.title));
-};
+// arrow functions have an implicit return.
+// const Add = (a, b) => {
+//   return a + b;
+// };
+// const Add2 = (a, b) => a + b;
 
-const MyFirstComponent = function() {
-  return ce(
-    'div',
-    { id: 'my-first-component' },
-    ce(MyTitle, { title: 'Game of Thrones', color: 'YellowGreen' }),
-    ce(MyTitle, { title: 'Stranger Things', color: 'GreenYellow' }),
-    ce(MyTitle, { title: 'Rick & Morty', color: 'LimeGreen' }),
-    ce(MyTitle, { title: 'Silicon Valley', color: 'Lime' })
-  );
-};
+const App = () => (
+  // can't use class in JSX as that is a reserved word for JavaScript.
+  <div className="app">
+    <div className="landing">
+      <h1>svideo</h1>
+      <input type="text" placeholder="Search" />
+      <a>or Browse All</a>
+    </div>
+  </div>
+);
 
-ReactDOM.render(ce(MyFirstComponent), document.getElementById('app'));
+render(<App />, document.getElementById('app'));
