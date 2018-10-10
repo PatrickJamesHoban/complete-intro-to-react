@@ -12,7 +12,8 @@ module.exports = {
   },
   // lets webpack know where you anticipate your bundle being served from...
   devServer: {
-    publicPath: '/public/'
+    publicPath: '/public/',
+    historyApiFallback: true
   },
   resolve: {
     // order of resolution of extensions.
