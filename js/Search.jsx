@@ -5,19 +5,14 @@ import preload from '../data.json';
 
 // key= is used to keep react from blowing away everything every time something changes, example a sort function for shows on a page.  Provide a unique identifier that Search can then keep track of.
 class Search extends Component {
-  // Constructor takes in props and passes props up. Simple boilerplate.
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: 'some sort of debug statement'
-    };
-    // put bind function inside constructor function so that it is only called once.
-    this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
-  }
+  // must use 'state' as the variable in this instance when replacing older constructor(props) method.
+  state = {
+    searchTerm: 'some debug statement'
+  };
   // .setState lets react know that it has something that it needs to re-render.  Don't modify state directly.
-  handleSearchTermChange(event) {
+  handleSearchTermChange = event => {
     this.setState({ searchTerm: event.target.value });
-  }
+  };
   render() {
     return (
       <div className="search">
