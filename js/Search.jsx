@@ -7,7 +7,7 @@ import preload from '../data.json';
 class Search extends Component {
   // must use 'state' as the variable in this instance when replacing older constructor(props) method.
   state = {
-    searchTerm: 'some debug statement'
+    searchTerm: ''
   };
   // .setState lets react know that it has something that it needs to re-render.  Don't modify state directly.
   handleSearchTermChange = event => {
@@ -17,7 +17,7 @@ class Search extends Component {
     return (
       <div className="search">
         <header>
-          <h1>svideo</h1>
+          <h1>{this.state.searchTerm} SVideo</h1>
           <input
             onChange={this.handleSearchTermChange}
             value={this.state.searchTerm}
@@ -26,9 +26,14 @@ class Search extends Component {
           />
         </header>
         <div>
-          {preload.shows.map(show => (
-            <ShowCard key={show.imdbID} {...show} />
-          ))}
+          {preload.shows
+            .filter(
+              show =>
+                `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
+            )
+            .map(show => (
+              <ShowCard key={show.imdbID} {...show} />
+            ))}
         </div>
       </div>
     );
