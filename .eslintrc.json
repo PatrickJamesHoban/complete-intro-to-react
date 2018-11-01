@@ -13,6 +13,7 @@
   "env": {
     "es6": true, // symbol for example
     "browser": true, // don't fail on 'window', 'document', etc.
-    "node": true // don't fail on process.env (only avail in node)
+    "node": true, // don't fail on process.env (only avail in node)
+    "jest": true // tells eslint to ignore all the things jest testing injects
   }
 }
