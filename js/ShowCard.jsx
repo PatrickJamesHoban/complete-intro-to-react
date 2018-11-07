@@ -31,6 +31,7 @@ const ShowCard = props => (
       <h4>({props.year})</h4>
       {/* parentheses are literally part of the string output to the dom in this instance */}
       <p>{props.description}</p>
+      <p>something different</p>
     </div>
   </Wrapper>
 );
