@@ -14,7 +14,8 @@ module.exports = {
   output: {
     // path is a node module, making sure it always lands on the correct place, regardless of where it was called from
     path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/public/'
   },
   // lets webpack know where you anticipate your bundle being served from...
   devServer: {
