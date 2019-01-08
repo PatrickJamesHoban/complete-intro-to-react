@@ -2,9 +2,6 @@
 
 import React from 'react';
 // styled is another react library
-
-// below is used to ignore the following line. not recommended.
-// $FlowFixMe
 import styled from 'styled-components';
 
 // tagged template literal double back-ticks `` pure javascript
@@ -25,7 +22,7 @@ const Image = styled.img`
 `;
 
 // props becomes whatever the parent passes down into show card.
-const ShowCard = (props:
+const ShowCard = (props: { 
   poster: string,
   title: string,
   year: string,
