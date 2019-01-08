@@ -1,7 +1,10 @@
+// @flow
+
 import React from 'react';
-// Note, prop-types no longer exists in react library
-import { string } from 'prop-types';
 // styled is another react library
+
+// below is used to ignore the following line. not recommended.
+// $FlowFixMe
 import styled from 'styled-components';
 
 // tagged template literal double back-ticks `` pure javascript
@@ -22,7 +25,12 @@ const Image = styled.img`
 `;
 
 // props becomes whatever the parent passes down into show card.
-const ShowCard = props => (
+const ShowCard = (props:
+  poster: string,
+  title: string,
+  year: string,
+  description: string
+}) => (
   <Wrapper>
     <Image alt={`${props.title} Show Poster`} src={`/public/img/posters/${props.poster}`} />
     {/* alt with backticks is another way to show string concatenation */}
@@ -39,11 +47,5 @@ const ShowCard = props => (
 // => shape is the object, poster, title, etc. are the properties of that object
 // => isRequired means NOT optional, will throw an error if a required prop is not there.
 
-ShowCard.propTypes = {
-  poster: string.isRequired,
-  title: string.isRequired,
-  year: string.isRequired,
-  description: string.isRequired
-};
 
 export default ShowCard;

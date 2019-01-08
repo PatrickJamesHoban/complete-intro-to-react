@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import ShowCard from './ShowCard';
 // below is a reference to the data.json file
@@ -10,7 +12,7 @@ class Search extends Component {
     searchTerm: ''
   };
   // .setState lets react know that it has something that it needs to re-render.  Don't modify state directly.
-  handleSearchTermChange = event => {
+  handleSearchTermChange = (event: SyntheticKeyboardEvent & { target: HTMLInputElement}) => {
     this.setState({ searchTerm: event.target.value });
   };
   render() {
